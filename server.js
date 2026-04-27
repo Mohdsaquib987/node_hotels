@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const db = require('./db');
 
+require('dotenv').config();
+const PORT=process.env.PORT;
+
 
 app.use(express.json());
 
@@ -55,4 +58,4 @@ const menuroutes=require('./routes/menuRoutes')
 app.use('/menu',menuroutes);
 
 
-app.listen(5000, () => console.log("Server running"));
+app.listen(PORT, () => console.log("Server running"));
